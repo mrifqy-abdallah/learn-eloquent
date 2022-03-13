@@ -54,4 +54,18 @@ class Cat extends Model
     function catsRequiringAntiRabbitBiteShot(){
         return $this->ageGreaterThan(6);
     }
+
+    /**
+     * Get Cat's name
+     */
+    function getNameAttribute($value){
+        return strtoupper($value);
+    }
+
+    /**
+     * Get Cat's Id and name
+     */
+    function getIdNameAttribute(){
+        return $this->attributes['id'] . ':' . $this->attributes['name'];
+    }
 }
