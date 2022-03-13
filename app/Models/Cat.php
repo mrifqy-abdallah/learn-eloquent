@@ -18,6 +18,8 @@ class Cat extends Model
         });
     }
 
+    protected $fillable = ['name', 'age'];
+
     /**
      * Bind query to 'age' greater than x
      * 
