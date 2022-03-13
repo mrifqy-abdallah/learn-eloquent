@@ -2,12 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Cat extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+    
+    protected static function boot() {
+        parent::boot();
+        static::addGlobalScope('age', function (Builder $builder) {
+            $builder->where('age', '>', 8);
+        });
+    }
 
     /**
      * Bind query to 'age' greater than x
