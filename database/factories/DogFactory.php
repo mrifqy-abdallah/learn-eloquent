@@ -17,7 +17,8 @@ class DogFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->firstName()
+            'name' => $this->faker->firstName(),
+            'age'  => $this->faker->numberBetween(1, 20)
         ];
     }
 }
