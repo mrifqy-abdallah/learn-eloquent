@@ -16,3 +16,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('insert-cats', function(){
+
+    \App\Models\CatJson::create(
+        ['info' => json_encode(['name' => 'Fluffy', 'long-hair' => true])]
+    );
+
+    \App\Models\CatJson::create(
+        ['info' => json_encode(['name' => 'Furball', 'long-hair' => false])]
+    );
+
+    \App\Models\CatJson::create(
+        ['info' => json_encode(['name' => 'Igor', 'long-hair' => true])]
+    );
+
+    echo('done');
+});
