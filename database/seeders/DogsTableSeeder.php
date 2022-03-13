@@ -15,10 +15,15 @@ class DogsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('dogs')->truncate();
-        DB::table('dogs')->insert(['name' => 'Joe']);
-        DB::table('dogs')->insert(['name' => 'Jock']);
-        DB::table('dogs')->insert(['name' => 'Jackie']);
-        DB::table('dogs')->insert(['name' => 'Jane']);
+        \App\Models\Dog::truncate();
+
+        // \App\Models\Dog::create(['name' => 'Joe']);
+        // \App\Models\Dog::create(['name' => 'Jock']);
+        // \App\Models\Dog::create(['name' => 'Jackie']);
+        // \App\Models\Dog::create(['name' => 'Jane']);
+
+        \App\Models\Dog::factory()
+            ->count(50)
+            ->create();
     }
 }
