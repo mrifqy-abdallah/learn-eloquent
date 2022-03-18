@@ -42,7 +42,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function hamsters() {
+    public function hamsters() 
+    {
         return $this->hasMany(Hamster::class);
     }
 
