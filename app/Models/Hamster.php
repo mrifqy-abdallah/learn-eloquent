@@ -10,4 +10,9 @@ class Hamster extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+    public function pivotUsers()
+    {
+        return $this->belongsToMany(User::class)->withPivot('role')->withTimestamps();
+    }
 }

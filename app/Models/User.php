@@ -45,4 +45,12 @@ class User extends Authenticatable
     public function hamsters() {
         return $this->hasMany(Hamster::class);
     }
+
+    public function pivotHamsters()
+    {
+        // Lavaral will assumes the table name of the relationship's intermediate table
+        // is the two related model names joined in alphabetical order.
+        // However you can override this convention.
+        return $this->belongsToMany(Hamster::class)->withPivot('role')->withTimestamps();
+    }
 }
