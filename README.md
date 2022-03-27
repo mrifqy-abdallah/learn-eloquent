@@ -3,3 +3,5 @@
 ## About 
 
 Learn Laravel's eloquent by example from [eloquentbyexample.com](https://eloquentbyexample.com/)'s tutorials, implemented in Laravel 9.
+
+The tutorials is copy-pasted to [learning-materials](./learning-materials/). Note that the tutorials is likely written with Laravel 5, so the implementation (if any) might be different from what is written in it.
